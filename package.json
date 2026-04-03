@@ -1,0 +1,19 @@
+{
+  "name": "playwrightautomatione2e",
+  "version": "1.0.0",
+  "description": "Playwright e2e automation framework with AI capabilities including MCP",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "playwright",
+    "Playwright e2e tests",
+    "Playwright MCP"
+  ],
+  "author": "Amitava Chakraborty",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.5.0"
+  }
+}
