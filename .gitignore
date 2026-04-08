@@ -13,3 +13,4 @@ node_modules/
 /tests-examples/
 example.*
 *.log
+tests/test-*.spec.ts
