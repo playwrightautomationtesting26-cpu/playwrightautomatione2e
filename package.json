@@ -4,19 +4,40 @@
   "description": "Playwright e2e automation framework with AI capabilities including MCP",
   "main": "index.js",
   "scripts": {
-    "login": "npx playwright test tests/functional/login.spec.ts --headed",
-    "demo": "npx playwright test tests/demo/mytest.spec.ts --headed"
+    "test:api": "npx playwright test --config=config/test.playwright.config.ts tests/api/users.api.spec.ts",
+    "test:e2e": "npx playwright test --config=config/test.playwright.config.ts tests/e2e/nopCommerce.e2e.spec.ts --headed",
+    "test:make-aptmnt:params": "npx playwright test --config=config/test.playwright.config.ts tests/demo/params.make-aptmnt.spec.ts --headed",
+    "dev:make-aptmnt:params": "npx playwright test --config=config/dev.playwright.config.ts tests/demo/params.make-aptmnt.spec.ts --headed",
+    "make-aptmnt:params": "npx playwright test tests/demo/params.make-aptmnt.spec.ts --headed",
+    "login:global": "npx playwright test tests/functional/login.spec.ts",
+    "demo:tag:smoke": "npx playwright test --grep \"@smoke\" --headed",
+    "demo:tag:regression": "npx playwright test --grep \"@regression\" --headed",
+    "login": "DEBUG=pw:api npx playwright test tests/functional/login.spec.ts --headed",
+    "make-aptmnt": "npx playwright test tests/functional/make-aptmnt.spec.ts --headed",
+    "pw-basic-cap": "npx playwright test tests/demo/pw.basis.cap.make-aptmnt.spec.ts --headed",
+    "pw-adv-cap": "npx playwright test tests/demo/pw.adv.cap.login.spec.ts --headed",
+    "inventory": "npx playwright test tests/functional/inventory.spec.ts --headed",
+    "demo": "npx playwright test tests/demo/mytest.spec.ts --headed",
+    "debug": "npx playwright test tests/demo/debug.make-aptmnt.spec.ts --headed",
+    "debug:ui": "npx playwright test tests/demo/debug.make-aptmnt.spec.ts --ui --headed",
+    "debug:cli": "PWDEBUG=1 npx playwright test tests/demo/debug.make-aptmnt.spec.ts",
+    "debug:trace": "npx playwright test tests/demo/debug.make-aptmnt.spec.ts --trace on"
   },
   "keywords": [
     "playwright",
-    "Playwright e2e tests",
-    "Playwright MCP"
+    "Playwright-e2e tests",
+    "Playwright-MCP"
   ],
   "author": "Amitava Chakraborty",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
     "@playwright/test": "^1.59.1",
-    "@types/node": "^25.5.0"
+    "@types/node": "^25.6.0",
+    "allure-playwright": "^3.7.1",
+    "chalk": "^4.1.2",
+    "csv-parse": "^6.2.1",
+    "dotenv": "^17.4.1",
+    "tsx": "^4.21.0"
   }
 }
