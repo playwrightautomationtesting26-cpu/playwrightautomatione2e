@@ -443,3 +443,154 @@ npx playwright install
 - [Updating playwright](https://playwright.dev/docs/intro#updating-playwright)
 - [Playwright Agents](https://playwright.dev/docs/test-agents)
 - [Agents md](https://github.com/agentsmd/agents.md?tab=readme-ov-file)
+
+## In this session...
+
+### Safely Updating Playwright without breaking your project
+
+**Why**
+
+1. To get latest features of playwright
+2. Compatibility with other toolsets like browaers, node.js and performance and security updates
+
+**Approach 1: Update Playwright only**
+
+1. Steps 1: Update the package
+
+```sh
+# Check current version
+npx playwright --version
+
+# Get the latest version
+npm show playwright version
+
+# Update to latest pw version
+npm install -D @playwright/test@latest
+npx playwright install --with-deps
+
+```
+
+2. Run test and confirm it works
+
+**Approach 2: Update the entire node package**
+
+```sh
+# Check latest version of all node packages
+npm outdated
+
+# Install all the latest packages and save the changes in package.json
+npm update --save
+
+# Check again and confirm
+npm outdated
+
+```
+
+Regerence: https://playwright.dev/docs/intro#updating-playwright
+
+Done!🎉
+
+## In this session...
+
+**Forking an existing Playwright Repository for faster setup**
+
+**Commands used**
+
+```sh
+# Clone
+git clone https://github.com/playwrightautomationtesting26-cpu/tau-introduction-to-playwright.git
+
+# Track upstream(Main Git repo to track to changes)
+git remote add upstream https://github.com/raptatinha/tau-introduction-to-playwright.git
+
+# Check remote
+git remote -v
+
+# pull latest from upstream
+git pull upstream main
+
+# You can push your changes - this does not impack the upstream repo
+git add .
+git commit -m 'Test'
+git push origin main
+
+```
+
+**Reference**
+
+1. Sample repo: https://github.com/raptatinha/tau-introduction-to-playwright
+2. Git docs:
+
+Done!🎉
+
+Ref git repo :(https://github.com/copeautomation/playwright-e2e-tests)
+
+## In this session...
+
+# YML/YAML – Fast Facts
+
+## Overview
+
+YAML (YAML Ain’t Markup Language) is a **human-readable data format** used to define structured data — especially in **DevOps, CI/CD pipelines, and automation tools** like GitHub Actions, Docker, and Kubernetes.
+
+It’s popular because it’s **simple, readable, and indentation-based** — no curly braces or brackets like JSON.
+
+---
+
+## Key Concepts
+
+| Concept | Description | Example |
+| ------- | ----------- | ------- |
+
+| **File Extension** | YAML files use `.yaml` or `.yml` (both are valid) | `config.yaml` |
+
+| **Key–Value Pair** | Each line has a key followed by a colon | `name: Playwright` |
+
+| **Indentation** | Spaces define hierarchy ( tabs are **not** allowed)|`test:`&nbsp;&nbsp;`script: run-tests.sh` |
+
+| **Lists / Arrays** | Begin with a dash `-` | `browsers:`&nbsp;&nbsp;`- chrome`&nbsp;&nbsp;`- firefox` |
+
+| **Comments** | Start with `#` | `# This is a comment`|
+
+| **Multi-line Values** | Use `|` for block text | `description: | `&nbsp;&nbsp;`This test runs...` |
+
+| **Booleans & Numbers** | No quotes needed for simple values| `enabled: true` |
+
+---
+
+## Useful VS Code Extentions
+
+1. GitHub Actions
+2. YAML 💖 JSON
+
+---
+
+## In this session...
+
+**GitHub Actions**
+
+1. ✔ format this file `Alt + Shift + F / Option + Shift + F`
+2. ✔ Update the Actions checkout version to `v5` - as per the pw doco
+3. Change the target `push` branch name
+4. Add env keys in `Github Secrets` **[Github Settings -> Secrets and Varibles -> Actions -> Add Repository secrets ]**
+5. Update the keys in `playwright.yml` file
+
+```yml
+env:
+  RUNNER: ${{ secrets.RUNNER }}
+  TEST_USER_NAME: ${{ secrets.TEST.USER_NAME }}
+  TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
+```
+
+6. Update the targets test(run) key (e.g. `npm run test:copy-make-aptmnt:params`)
+7. Run and confirm the test
+8. View the basic HTML Report
+9. Done!🎉
+
+**Tips:**
+
+1. Understand the `CI` setting in the config file
+
+**Reference:**
+
+- [Github Action](https://docs.github.com/en/actions/concepts/workflows-and-actions/workflows)

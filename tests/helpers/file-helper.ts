@@ -7,7 +7,7 @@ import { log } from './logger.js'
 /**
  * Reads file and returns string. For JSON, parse it before using
  */
-function readFile(filePath: any): any {
+function readFile(filePath: any) {
   if (!fs.existsSync(filePath)) {
     throw new Error(`No file exists with given name : ${filePath}`)
   }
@@ -38,7 +38,7 @@ function writeFile(filePath: any, data: any) {
  * @param filePath
  * @returns Array of object
  */
-function readCSVFile(filePath: any): any[] {
+function readCSVFile(filePath: any) {
   const csvDataStr = fs.readFileSync(filePath, { encoding: 'utf-8' })
   const scvDataArray = parse(csvDataStr, {
     columns: true,
@@ -48,4 +48,4 @@ function readCSVFile(filePath: any): any[] {
   return scvDataArray
 }
 
-export default { readCSVFile, readFile, writeFile }
+export { readFile, writeFile, readCSVFile }

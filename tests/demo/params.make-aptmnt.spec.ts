@@ -1,13 +1,14 @@
 import { test, expect, TestInfo } from '@playwright/test'
 import TestData from '../../data/data-test'
-import { readCSVFile } from '../helpers/file-helper'
+import { readCSVFile } from '../helpers/file-helper.js'
 import path from 'node:path'
 import { log } from '../helpers/logger'
 
 const csvFilePath = path.resolve(
   `${process.cwd()}/data/functional/make-aptmmnt-test-data.csv`,
 )
-const csvData = readCSVFile(csvFilePath) as any[]
+
+const csvData = readCSVFile(csvFilePath)
 //const testData = TestData.makeAppointTestData() // --> Return 3 sets of test data combinations for making appointment
 // Accessing test data in a loop
 for (const appointmentdata of csvData) {

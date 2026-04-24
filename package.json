@@ -7,6 +7,7 @@
     "test:api": "npx playwright test --config=config/test.playwright.config.ts tests/api/users.api.spec.ts",
     "test:e2e": "npx playwright test --config=config/test.playwright.config.ts tests/e2e/nopCommerce.e2e.spec.ts --headed",
     "test:make-aptmnt:params": "npx playwright test --config=config/test.playwright.config.ts tests/demo/params.make-aptmnt.spec.ts --headed",
+    "test:copy-make-aptmnt:params": "npx playwright test --config=config/test.playwright.config.ts tests/demo/copy.params.make-aptmnt.spec.ts",
     "dev:make-aptmnt:params": "npx playwright test --config=config/dev.playwright.config.ts tests/demo/params.make-aptmnt.spec.ts --headed",
     "make-aptmnt:params": "npx playwright test tests/demo/params.make-aptmnt.spec.ts --headed",
     "login:global": "npx playwright test tests/functional/login.spec.ts",
